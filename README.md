@@ -15,3 +15,4 @@ Create a Mongo Dashboard with CubeJs
 - [cube.js blog](https://cube.dev/blog/building-mongodb-dashboard-using-node.js)
 - [Medium de MongoSQLD](https://medium.com/@jchamale.usac/building-a-docker-image-for-mongo-bi-connector-c9872b1821ba)
 - [Real Time - DEV](https://dev.to/keydunov/real-time-dashboard-with-mongodb-5gnd)
+- [Development env](https://cube.dev/docs/deployment#docker-compose)
