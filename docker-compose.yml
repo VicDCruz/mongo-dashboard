@@ -1,0 +1,25 @@
+version: "3"
+services: 
+  cube:
+    image: cubejs
+    volumes: 
+      - ./:/output
+      - ./.env:/real-time-dashboard/.env
+    ports:
+      - 3000:3000
+      - 4000:4000
+    # tty: true
+    container_name: cube
+  cube_db:
+    image: "juky/mongobi"
+    ports:
+      - 3307:3307
+    volumes: 
+      - "./mongosqld.conf:/home/mongobi/mongosqld.conf"
+      - "./logs:/logs"
+    container_name: cube_db
+  mongo:
+      image: "mongo:4.0.5"
+      ports:
+        - 27017:27017
+      container_name: mongo
