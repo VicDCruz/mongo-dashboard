@@ -1,90 +1,27 @@
 import React from "react";
-import { Col } from "antd";
+import { Col, Row } from "antd";
 import ChartRenderer from "../components/ChartRenderer";
 import Dashboard from "../components/Dashboard";
 import DashboardItem from "../components/DashboardItem";
 const DashboardItems = [
   {
     id: 0,
-    name: "Últimos 7 dias",
+    name: "Total al día de hoy",
     vizState: {
       query: {
-        measures: ["Routers.count"],
-        timeDimensions: [
-          {
-            dimension: "Routers.createdAt",
-            granularity: "hour",
-            dateRange: "Last 7 days"
-          }
-        ],
-        filters: [],
-        timezone: "America/Mexico_City"
-      },
-      chartType: "line"
-    }
-  },
-  {
-    id: 1,
-    name: "Total de los últimos 7 dias",
-    vizState: {
-      query: {
-        measures: ["Routers.count"],
-        timeDimensions: [
-          {
-            dimension: "Routers.createdAt",
-            dateRange: "Last 7 days"
-          }
-        ],
-        filters: [],
-        timezone: "America/Mexico_City"
+        
       },
       chartType: "number"
-    }
+    },
+    size: 8
   },
-  {
-    id: 2,
-    name: "Al dia de hoy",
-    vizState: {
-      query: {
-        measures: ["Routers.count"],
-        timeDimensions: [
-          {
-            dimension: "Routers.createdAt",
-            granularity: "hour",
-            dateRange: "Today"
-          }
-        ],
-        filters: [],
-        timezone: "America/Mexico_City"
-      },
-      chartType: "line"
-    }
-  },
-  {
-    id: 3,
-    name: "Total de genero",
-    vizState: {
-      query: {
-        measures: ["Routers.count"],
-        timeDimensions: [
-          {
-            dimension: "Routers.createdAt",
-            dateRange: "Today"
-          }
-        ],
-        dimensions: ["Routers.genero"],
-        filters: []
-      },
-      chartType: "table"
-    }
-  }
 ];
 
 const DashboardPage = () => {
   const dashboardItem = item => (
     <Col
       span={24}
-      lg={12}
+      lg={item.size}
       key={item.id}
       style={{
         marginBottom: "24px"
@@ -103,19 +40,31 @@ const DashboardPage = () => {
         padding: 12
       }}
     >
-      <h2>
-        There are no charts on this dashboard. Use Playground Build to add one.
-      </h2>
+      <h2>There are no charts on this dashboard</h2>
     </div>
   );
 
   return DashboardItems.length ? (
-    <Dashboard dashboardItems={DashboardItems}>
-      {DashboardItems.map(dashboardItem)}
-    </Dashboard>
+    <div
+      style={{
+        padding: "0 12px 12px 12px",
+        margin: "10px 8px"
+      }}
+    >
+      <Row
+        style={{
+          padding: "0 20px"
+        }}
+      ></Row>
+      <Row>
+        <Dashboard dashboardItems={DashboardItems}>
+          {DashboardItems.map(dashboardItem)}
+        </Dashboard>
+      </Row>
+    </div>
   ) : (
-    <Empty />
-  );
+      <Empty />
+    );
 };
 
 export default DashboardPage;

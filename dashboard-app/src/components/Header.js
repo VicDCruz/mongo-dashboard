@@ -1,45 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
+import cubejsLogo from "../azteca-logo.png";
+import tracker from "../tracker";
 
-const Header = ({ location }) => (
-  <Layout.Header
-    style={{
-      padding: "0 32px"
-    }}
-  >
-    <div
+const Header = ({ location }) => {
+  const [sendingEvent, setSendingEvent] = useState(false);
+  return (
+    <Layout.Header
       style={{
-        float: "left"
+        padding: "0 32px"
       }}
     >
-      <h2
+      <div
         style={{
-          color: "#fff",
-          margin: 0,
-          marginRight: "1em",
-          display: "inline",
-          width: 100,
-          lineHeight: "54px"
+          float: "left"
         }}
       >
-        My Dashboard
-      </h2>
-    </div>
-    <Menu
-      theme="dark"
-      mode="horizontal"
-      selectedKeys={[location.pathname]}
-      style={{
-        lineHeight: "64px"
-      }}
-    >
-      <Menu.Item key="/">
-        <Link to="/">Dashboard</Link>
-      </Menu.Item>
-    </Menu>
-  </Layout.Header>
-);
+        <h2
+          style={{
+            color: "#fff",
+            margin: 0,
+            marginRight: "1em"
+          }}
+        >
+          <img alt="cubejs-logo" src={cubejsLogo} height={40} />
+          <p className="stats">Semáforos inteligentes</p>
+        </h2>
+      </div>
+    </Layout.Header>
+  )
+};
 
 export default withRouter(Header);

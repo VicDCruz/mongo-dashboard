@@ -8,8 +8,7 @@ const Dashboard = ({ children }) => (
     align="top"
     gutter={24}
     style={{
-      padding: "0 12px 12px 12px",
-      margin: "25px 8px"
+      margin: "25px 0"
     }}
   >
     {children}

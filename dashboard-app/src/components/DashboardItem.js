@@ -3,6 +3,7 @@ import { Card } from "antd";
 
 const DashboardItem = ({ children, title }) => (
   <Card
+    bordered={false}
     title={title}
     style={{
       height: "100%",

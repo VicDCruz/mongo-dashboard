@@ -1,20 +1,22 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect } from "react";
 import "./App.css";
-import "./body.css";
-import "antd/dist/antd.css";
 import { Layout } from "antd";
 import cubejs from "@cubejs-client/core";
 import { CubeProvider } from "@cubejs-client/react";
 import Header from "./components/Header";
 import WebSocketTransport from "@cubejs-client/ws-transport";
-const API_URL = "http://localhost:4000";
-const CUBEJS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODkyOTMzNjYsImV4cCI6MTU4OTM3OTc2Nn0.wvtwb2ZPGoz2wovIi77Y0IGoaT-jiIOQ7xHZG7eo1gc";
+import tracker from "./tracker";
+const CUBEJS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NzM2MjI5MjR9.iD_sSpXRBQSO0ywh5zSPHpHV-1O37oQMakrkG03kR-o";
+let WS_URL;
+if (process.env.NODE_ENV === 'production') {
+  WS_URL = window.location.origin.replace('http', 'ws').replace('https', 'wss')
+} else {
+  WS_URL = "ws://localhost:4000/"
+}
 const cubejsApi = cubejs({
   transport: new WebSocketTransport({
     authorization: CUBEJS_TOKEN,
-    apiUrl: API_URL.replace("http", "ws")
+    apiUrl: WS_URL
   })
 });
 
@@ -29,10 +31,13 @@ const AppLayout = ({ children }) => (
   </Layout>
 );
 
-const App = ({ children }) => (
-  <CubeProvider cubejsApi={cubejsApi}>
-    <AppLayout>{children}</AppLayout>
-  </CubeProvider>
-);
+const App = ({ children }) => {
+  useEffect(() => tracker.pageview(), []);
+  return (
+    <CubeProvider cubejsApi={cubejsApi}>
+      <AppLayout>{children}</AppLayout>
+    </CubeProvider>
+  );
+};
 
 export default App;
