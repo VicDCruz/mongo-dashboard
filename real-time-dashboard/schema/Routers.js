@@ -1,5 +1,9 @@
 cube(`Routers`, {
   sql: `SELECT * FROM routers.routers`,
+
+  refreshKey: {
+    every: `1 second`
+  },
   
   joins: {
     
