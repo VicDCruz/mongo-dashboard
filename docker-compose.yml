@@ -5,6 +5,8 @@ services:
     volumes: 
       - './real-time-dashboard:/real-time-dashboard'
       - '/real-time-dashboard/node_modules'
+      - './dashboard-app:/real-time-dashboard/dashboard-app'
+      - '/real-time-dashboard/dashboard-app/node_modules'
       - ./:/output
     ports:
       - 3000:3000
@@ -14,15 +16,25 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
   cube_db:
-    image: "juky/mongobi"
+    image: "mongobi"
     ports:
       - 3307:3307
     volumes: 
-      - "./mongosqld/mongosqld.conf:/home/mongobi/mongosqld.conf"
-      - "./mongosqld/logs:/logs"
+      - "./mongosqld/mongosqld.conf:/mongosqld.conf"
+      - "./mongosqld/init.sh:/mongodb-bi/init.sh"
+    restart: always
     container_name: cube_db
   # mongo:
   #     image: "mongo:4.0.5"
   #     ports:
   #       - 27017:27017
   #     container_name: mongo
+  # ngrok:
+  #   image: wernight/ngrok
+  #   container_name: ngrok
+  #   ports:
+  #       - 4040:4040
+  #   links:
+  #       - cube
+  #   environment:
+  #       - NGROK_PORT=cube:80
