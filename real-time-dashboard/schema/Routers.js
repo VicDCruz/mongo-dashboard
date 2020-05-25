@@ -81,6 +81,11 @@ cube(`Routers`, {
       sql: `created_at`,
       type: `time`
     },
+
+    formatTime: {
+      sql: `DATE_FORMAT(DATE_SUB(created_at, INTERVAL 5 HOUR), "%k:00")`,
+      type: `string`
+    },
     
     updatedat: {
       sql: `${CUBE}.\`updatedAt\``,
