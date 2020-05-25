@@ -25,7 +25,7 @@ const Header = ({ location }) => {
           }}
         >
           <img alt="cubejs-logo" src={cubejsLogo} height={40} />
-          <p className="stats">Semáforos inteligentes</p>
+          <p className="stats">#NoHagasFIlas Dashboard</p>
         </h2>
       </div>
     </Layout.Header>
