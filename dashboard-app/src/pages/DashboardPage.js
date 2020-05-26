@@ -27,7 +27,7 @@ const DashboardItems = [
           "Routers.formatTime": 'asc'
         }
       },
-      chartType: "line"
+      chartType: "area"
     },
     size: 12
   },
