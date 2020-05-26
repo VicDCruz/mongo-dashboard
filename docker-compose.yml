@@ -9,7 +9,6 @@ services:
       - '/real-time-dashboard/dashboard-app/node_modules'
       - ./:/output
     ports:
-      - 3000:3000
       - 4000:4000
       - 80:80
     # tty: true
