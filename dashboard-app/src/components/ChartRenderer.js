@@ -72,6 +72,9 @@ const TypeToChartComponent = {
       }))
     };
     const options = {
+      legend: {
+        display: false
+      },
       scales: {
         yAxes: [
           {
