@@ -33,7 +33,7 @@ const DashboardItems = [
   },
   {
     id: 1,
-    name: "Clientes al momento",
+    name: "Clientes acumulados al día de hoy",
     vizState: {
       query: {
         "measures": [
