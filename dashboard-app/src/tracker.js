@@ -2,12 +2,12 @@ import cookie from "component-cookie";
 import uuidv4 from "uuid/v4";
 import { fetch } from "whatwg-fetch";
 
-let URL;
-if (process.env.NODE_ENV === 'production') {
-  URL = window.location.origin
-} else {
-  URL = "http://localhost:4000"
-}
+let URL = "http://localhost:4000";
+// if (process.env.NODE_ENV === 'production') {
+//   URL = window.location.origin
+// } else {
+//   URL = "http://localhost:4000"
+// }
 
 const COOKIE_NAME = "real_time_dashboard_uid";
 const track = (eventName) => {
