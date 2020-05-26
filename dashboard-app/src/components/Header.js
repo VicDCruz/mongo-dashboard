@@ -25,7 +25,7 @@ const Header = ({ location }) => {
           }}
         >
           <img alt="cubejs-logo" src={cubejsLogo} height={40} />
-          <p className="stats">#SiempreContigo Dashboard</p>
+          <p className="stats">#SiempreAbiertos Dashboard</p>
         </h2>
       </div>
     </Layout.Header>
