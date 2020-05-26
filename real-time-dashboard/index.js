@@ -25,7 +25,15 @@ const app = express();
 app.use(require('cors')());
 app.use(bodyParser.json({ limit: '50mb' }));
 
-const serverCore = CubejsServerCore.create();
+// const serverCore = CubejsServerCore.create();
+const serverCore = new CubejsServer({
+    processSubscriptionsInterval: 1,
+    orchestratorOptions: {
+      queryCacheOptions: {
+        refreshKeyRenewalThreshold: 1,
+      }
+    }
+  });
 serverCore.initApp(app);
 
 const port = process.env.PORT || 4000;
