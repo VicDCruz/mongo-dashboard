@@ -4,7 +4,7 @@ import { fetch } from "whatwg-fetch";
 
 let URL;
 if (process.env.NODE_ENV === 'production') {
-  URL = "http://189.213.161.74:4000";
+  URL = "http://167.172.218.187:4000";
 } else {
   URL = "http://localhost:4000";
 }

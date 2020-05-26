@@ -9,7 +9,7 @@ import tracker from "./tracker";
 const CUBEJS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NzM2MjI5MjR9.iD_sSpXRBQSO0ywh5zSPHpHV-1O37oQMakrkG03kR-o";
 let WS_URL;
 if (process.env.NODE_ENV === 'production') {
-  WS_URL = "ws://189.213.161.74:4000";
+  WS_URL = "ws://167.172.218.187:4000";
 } else {
   WS_URL = "ws://localhost:4000/";
 }
