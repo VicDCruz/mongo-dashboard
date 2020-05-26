@@ -26,7 +26,7 @@ app.use(require('cors')());
 app.use(bodyParser.json({ limit: '50mb' }));
 
 // const serverCore = CubejsServerCore.create();
-const serverCore = new CubejsServer({
+const serverCore = new CubejsServerCore({
     processSubscriptionsInterval: 1,
     orchestratorOptions: {
       queryCacheOptions: {
