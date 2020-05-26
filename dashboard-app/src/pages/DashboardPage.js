@@ -54,7 +54,7 @@ const DashboardItems = [
     size: 8
   },
   {
-    id: 0,
+    id: 2,
     name: "Reporte por fase de ayer",
     vizState: {
       query: {
@@ -82,7 +82,7 @@ const DashboardItems = [
     size: 20
   },
   {
-    id: 2,
+    id: 3,
     name: "Reporte general de ayer",
     vizState: {
       query: {
@@ -109,7 +109,7 @@ const DashboardItems = [
     size: 15
   },
   {
-    id: 1,
+    id: 4,
     name: "Total de clientes de ayer",
     vizState: {
       query: {
