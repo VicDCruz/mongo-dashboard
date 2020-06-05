@@ -5,10 +5,12 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { HashRouter as Router, Route } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
+import { SignIn } from "./components/SignIn";
 ReactDOM.render(
   <Router>
     <App>
       <Route key="index" exact path="/" component={DashboardPage} />
+      <Route key="login" exact path="/login" component={SignIn} />
     </App>
   </Router>,
   document.getElementById("root")

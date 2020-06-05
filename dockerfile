@@ -18,8 +18,8 @@ WORKDIR /real-time-dashboard/dashboard-app
 RUN rm -rf node_modules
 RUN npm install
 
-ENV PATH /real-time-dashboard/node_modules/.bin:$PATH
-ENV PATH /real-time-dashboard/dashboard-app/node_modules/.bin:$PATH
+# ENV PATH /real-time-dashboard/node_modules/.bin:$PATH
+# ENV PATH /real-time-dashboard/dashboard-app/node_modules/.bin:$PATH
 
 WORKDIR /
 
