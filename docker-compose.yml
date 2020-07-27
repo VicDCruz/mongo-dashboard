@@ -29,12 +29,12 @@ services:
   #     ports:
   #       - 27017:27017
   #     container_name: mongo
-  ngrok:
-    image: wernight/ngrok
-    container_name: ngrok
-    ports:
-        - 4040:4040
-    links:
-        - cube
-    environment:
-        - NGROK_PORT=cube:80
+  # ngrok:
+  #   image: wernight/ngrok
+  #   container_name: ngrok
+  #   ports:
+  #       - 4040:4040
+  #   links:
+  #       - cube
+  #   environment:
+  #       - NGROK_PORT=cube:80

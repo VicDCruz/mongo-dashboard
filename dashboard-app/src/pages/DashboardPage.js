@@ -130,6 +130,26 @@ const DashboardItems = [
     },
     size: 8
   },
+  {
+    id: 5,
+    name: "Conexiones por sucursal de ayer",
+    vizState: {
+      "measures": [
+        "Routers.count"
+      ],
+      "timeDimensions": [
+        {
+          "dimension": "Routers.createdAt",
+          "dateRange": "Yesterday"
+        }
+      ],
+      "dimensions": [
+        "Routers.noeco"
+      ],
+      "filters": []
+    },
+    size: 12
+  },
 ];
 
 const DashboardPage = () => {
