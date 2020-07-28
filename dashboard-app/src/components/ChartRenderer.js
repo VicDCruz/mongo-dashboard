@@ -5,17 +5,22 @@ import { useCubeQuery } from "@cubejs-client/react";
 import { Spin, Row, Col, Statistic, Table } from "antd";
 import { Line, Bar, Pie } from "react-chartjs-2";
 
-function getRandomColor() {
+function getRandomColor(total) {
+  const output = [];
   var letters = '0123456789ABCDEF'.split('');
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+  for (var j = 0; j < total; j++) {
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
   }
-  return color;
+  output.push(color);
+  return output;
 }
 
 const COLORS_SERIES = ["#149799", "#86FFBC", "#FFC7D2"];
-const MONOCHROMATIC_SERIES = ["#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C"];
+const MONOCHROMATIC_SERIES = getRandomColor(50);
+//  ["#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C"];
 const TypeToChartComponent = {
   line: ({ resultSet }) => {
     const data = {
@@ -95,14 +100,13 @@ const TypeToChartComponent = {
     return <Line data={data} options={options} />;
   },
   pie: ({ resultSet }) => {
-    const color = getRandomColor();
     const data = {
       labels: resultSet.categories().map(c => c.category),
       datasets: resultSet.series().map(s => ({
         label: s.title,
         data: s.series.map(r => r.value),
-        backgroundColor: color,
-        hoverBackgroundColor: color
+        backgroundColor: MONOCHROMATIC_SERIES,
+        hoverBackgroundColor: MONOCHROMATIC_SERIES
       }))
     };
     const options = {};
