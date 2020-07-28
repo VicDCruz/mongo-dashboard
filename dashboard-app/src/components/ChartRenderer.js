@@ -19,8 +19,11 @@ function getRandomColor(total) {
 }
 
 const COLORS_SERIES = ["#149799", "#86FFBC", "#FFC7D2"];
-const MONOCHROMATIC_SERIES = getRandomColor(50);
-//  ["#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C"];
+const MONOCHROMATIC_SERIES = [
+  "#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C",
+  "#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C",
+  "#06B85C", "#2B8456", "#036B35", "#79B897", "#02381C", "#86B89E", "#39845D", "#4E6B5C"
+];
 const TypeToChartComponent = {
   line: ({ resultSet }) => {
     const data = {
