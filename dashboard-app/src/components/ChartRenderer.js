@@ -5,17 +5,13 @@ import { useCubeQuery } from "@cubejs-client/react";
 import { Spin, Row, Col, Statistic, Table } from "antd";
 import { Line, Bar, Pie } from "react-chartjs-2";
 
-function getRandomColor(total) {
-  const output = [];
+function getRandomColor() {
   var letters = '0123456789ABCDEF'.split('');
-  for (var j = 0; j < total; j++) {
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
   }
-  output.push(color);
-  return output;
+  return color;
 }
 
 const COLORS_SERIES = ["#149799", "#86FFBC", "#FFC7D2"];
@@ -99,14 +95,14 @@ const TypeToChartComponent = {
     return <Line data={data} options={options} />;
   },
   pie: ({ resultSet }) => {
-    const colors = getRandomColor(resultSet.series().length);
+    const color = getRandomColor();
     const data = {
       labels: resultSet.categories().map(c => c.category),
       datasets: resultSet.series().map(s => ({
         label: s.title,
         data: s.series.map(r => r.value),
-        backgroundColor: colors,
-        hoverBackgroundColor: colors
+        backgroundColor: color,
+        hoverBackgroundColor: color
       }))
     };
     const options = {};
