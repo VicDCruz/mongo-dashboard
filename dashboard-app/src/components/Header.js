@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router";
 import { Layout } from "antd";
 import cubejsLogo from "../azteca-logo.png";
-import tracker from "../tracker";
+// import tracker from "../tracker";
 
 const Header = ({ location }) => {
   const [sendingEvent, setSendingEvent] = useState(false);

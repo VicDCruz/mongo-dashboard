@@ -134,19 +134,23 @@ const DashboardItems = [
     id: 5,
     name: "Conexiones por sucursal de ayer",
     vizState: {
-      "measures": [
-        "Routers.count"
-      ],
-      "timeDimensions": [
-        {
-          "dimension": "Routers.createdAt",
-          "dateRange": "Yesterday"
-        }
-      ],
-      "dimensions": [
-        "Routers.noeco"
-      ],
-      "filters": []
+      query: {
+        "measures": [
+          "Routers.count"
+        ],
+        "timeDimensions": [
+          {
+            "dimension": "Routers.createdAt",
+            "dateRange": "Yesterday"
+          }
+        ],
+        "dimensions": [
+          "Routers.noeco"
+        ],
+        "filters": [],
+        "timezone": 'America/Mexico_City',
+      },
+      chartType: "pie",
     },
     size: 12
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
+// import moment from "moment";
 import { useCubeQuery } from "@cubejs-client/react";
 import { Spin, Row, Col, Statistic, Table } from "antd";
 import { Line, Bar, Pie } from "react-chartjs-2";
@@ -104,7 +104,7 @@ const TypeToChartComponent = {
       columns={[
         { title: "Anonymous ID", dataIndex: "Events.anonymousId" },
         { title: "Event Type", dataIndex: "Events.eventType" },
-        { title: "Time", dataIndex: "Events.minutesAgoHumanized"}
+        { title: "Time", dataIndex: "Events.minutesAgoHumanized" }
       ]}
       dataSource={resultSet.tablePivot().map((row) => {
         const addMinsAgo = (text) => {

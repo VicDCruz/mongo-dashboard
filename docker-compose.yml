@@ -10,7 +10,7 @@ services:
       - ./:/output
     ports:
       - 4000:4000
-      - 80:80
+      - 3000:3000
     # tty: true
     container_name: cube
     # environment:
