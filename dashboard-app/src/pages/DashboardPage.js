@@ -6,7 +6,7 @@ import DashboardItem from "../components/DashboardItem";
 const DashboardItems = [
   {
     id: 0,
-    name: "Reporte al momento",
+    name: "Conexiones por landing page",
     vizState: {
       query: {
         "measures": [
