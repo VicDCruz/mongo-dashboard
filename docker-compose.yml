@@ -4,37 +4,23 @@ services:
     image: cubejs
     volumes: 
       - './real-time-dashboard:/real-time-dashboard'
-      # - '/real-time-dashboard/node_modules'
       - './dashboard-app:/real-time-dashboard/dashboard-app'
-      # - '/real-time-dashboard/dashboard-app/node_modules'
       - ./:/output
     ports:
       - 4000:4000
       - 3000:3000
-    # tty: true
     container_name: cube
-    # environment:
-    #   - CHOKIDAR_USEPOLLING=true
-  cube_db:
-    image: "mongobi"
-    ports:
-      - 3307:3307
-    volumes: 
-      - "./mongosqld/mongosqld.conf:/mongosqld.conf"
-      - "./mongosqld/init.sh:/mongodb-bi/init.sh"
-    restart: always
-    container_name: cube_db
+  # cube_db:
+  #   image: "mongobi"
+  #   ports:
+  #     - 3307:3307
+  #   volumes: 
+  #     - "./mongosqld/mongosqld.conf:/mongosqld.conf"
+  #     - "./mongosqld/init.sh:/mongodb-bi/init.sh"
+  #   restart: always
+  #   container_name: cube_db
   # mongo:
   #     image: "mongo:4.0.5"
   #     ports:
   #       - 27017:27017
   #     container_name: mongo
-  # ngrok:
-  #   image: wernight/ngrok
-  #   container_name: ngrok
-  #   ports:
-  #       - 4040:4040
-  #   links:
-  #       - cube
-  #   environment:
-  #       - NGROK_PORT=cube:80
