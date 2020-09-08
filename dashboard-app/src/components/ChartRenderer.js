@@ -40,6 +40,18 @@ const TypeToChartComponent = {
         display: true
       },
       scales: {
+        // Para horas acumuladas mostradas en grupo
+        xAxes: [
+          {
+            type: "time",
+            time: {
+              displayFormats: {
+                hour: "HH:MM"
+              },
+              tooltipFormat: "HH:MM"
+            }
+          }
+        ],
         yAxes: [{
           ticks: {
             precision: 0,
