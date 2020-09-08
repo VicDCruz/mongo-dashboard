@@ -24,7 +24,7 @@ cube(`Routers`, {
         when: [
           { sql: `${CUBE}.fase = '1'`, label: `Aviso de privacidad` },
           { sql: `${CUBE}.fase = '2'`, label: `Redes sociales` },
-          { sql: `${CUBE}.fase = '3'`, label: `Instrucciones` },
+          { sql: `${CUBE}.fase = '3'`, label: `Instrucciones de descarga` },
         ],
         else: { label: `Desconocido` }
       }
