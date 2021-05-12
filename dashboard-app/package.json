@@ -9,7 +9,7 @@
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
     "antd": "^3.24.3",
-    "chart.js": "^2.9.1",
+    "chart.js": "^2.9.4",
     "component-cookie": "^1.1.4",
     "fetch": "^1.1.0",
     "moment": "^2.24.0",
